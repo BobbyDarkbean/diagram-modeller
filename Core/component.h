@@ -9,6 +9,9 @@
 namespace DiagramModeller {
 
 
+extern DM_CORE_SHARED const int INVALID_COMPONENT_ID;
+
+
 class ComponentSharedImplementation;
 class DM_CORE_SHARED Component
 {

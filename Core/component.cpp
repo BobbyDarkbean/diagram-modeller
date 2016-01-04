@@ -5,6 +5,9 @@
 namespace DiagramModeller {
 
 
+const int INVALID_COMPONENT_ID = -1;
+
+
 ComponentSharedImplementation::ComponentSharedImplementation()
     : QSharedData()
 {
