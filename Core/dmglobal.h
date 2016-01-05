@@ -18,6 +18,14 @@ enum ComponentCategory
     CC_Return
 };
 
+enum VisibilityScope
+{
+    VS_Public,
+    VS_Protected,
+    VS_Private,
+    VS_Package
+};
+
 
 } // namespace DiagramModeller
 
