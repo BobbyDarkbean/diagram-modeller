@@ -38,6 +38,12 @@ enum RelationCategory
     RC_Dependency
 };
 
+enum RelationSide
+{
+    RS_1,
+    RS_2
+};
+
 
 } // namespace DiagramModeller
 
