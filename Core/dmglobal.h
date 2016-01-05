@@ -26,6 +26,18 @@ enum VisibilityScope
     VS_Package
 };
 
+enum RelationCategory
+{
+    RC_None,
+    RC_Generalization,
+    RC_Realization,
+    RC_Composition,
+    RC_Aggregation,
+    RC_Association,
+    RC_DirectedAssociation,
+    RC_Dependency
+};
+
 
 } // namespace DiagramModeller
 
