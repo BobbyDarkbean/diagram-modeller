@@ -50,6 +50,11 @@ Relation::~Relation()
 {
 }
 
+QString Relation::name() const { return m->name; }
+void Relation::setName(QString value) { m->name = value; }
+
+int Relation::id() const { return m->id; }
+
 
 Relation &Relation::operator =(const Relation &other)
 {

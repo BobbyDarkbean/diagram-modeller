@@ -3,6 +3,7 @@
 
 
 #include <QSharedDataPointer>
+#include <QString>
 #include "Core/shareddefs.h"
 
 
@@ -20,6 +21,11 @@ public:
     Relation(const Relation &);
 
     ~Relation();
+
+    QString name() const;
+    void setName(QString);
+
+    int id() const;
 
     Relation &operator =(const Relation &);
 
