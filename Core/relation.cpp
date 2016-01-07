@@ -33,9 +33,10 @@ RelationSharedImplementation::~RelationSharedImplementation()
 }
 
 
-Relation::Relation()
+Relation::Relation(int id)
     : m(new RelationSharedImplementation)
 {
+    m->id = id;
 }
 
 

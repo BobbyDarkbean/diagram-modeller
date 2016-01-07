@@ -16,7 +16,7 @@ class RelationSharedImplementation;
 class DM_CORE_SHARED Relation
 {
 public:
-    Relation();
+    explicit Relation(int id = INVALID_RELATION_ID);
     Relation(const Relation &);
 
     ~Relation();
