@@ -11,7 +11,8 @@ RelationSideInfoSharedImplementation::RelationSideInfoSharedImplementation()
       componentId(INVALID_COMPONENT_ID),
       category(RC_None),
       multiplicity(),
-      name()
+      name(),
+      visibility(VS_Public)
 {
 }
 
@@ -21,7 +22,8 @@ RelationSideInfoSharedImplementation::RelationSideInfoSharedImplementation(const
       componentId(other.componentId),
       category(other.category),
       multiplicity(other.multiplicity),
-      name(other.name)
+      name(other.name),
+      visibility(other.visibility)
 {
 }
 
@@ -66,6 +68,9 @@ void RelationSideInfo::setMultiplicity(QString value) { m->multiplicity = value;
 
 QString RelationSideInfo::name() const { return m->name; }
 void RelationSideInfo::setName(QString value) { m->name = value; }
+
+VisibilityScope RelationSideInfo::visibility() const { return m->visibility; }
+void RelationSideInfo::setVisibility(VisibilityScope value) { m->visibility = value; }
 
 
 } // namespace DiagramModeller

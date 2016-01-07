@@ -33,6 +33,9 @@ public:
     QString name() const;
     void setName(QString);
 
+    VisibilityScope visibility() const;
+    void setVisibility(VisibilityScope);
+
 private:
     QSharedDataPointer<RelationSideInfoSharedImplementation> m;
 };
