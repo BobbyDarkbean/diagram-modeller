@@ -13,10 +13,13 @@ HEADERS += \
     component.h \
     dmglobal.h \
     relation.h \
-    shareddefs.h
+    relationsideinfo.h \
+    shareddefs.h \
+    private/relationsideinfo_si.h
 
 SOURCES += \
     component.cpp \
-    relation.cpp
+    relation.cpp \
+    relationsideinfo.cpp
 
 DEFINES += DM_CORE_LIB
