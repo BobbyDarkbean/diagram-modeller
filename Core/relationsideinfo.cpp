@@ -1,6 +1,6 @@
 #include "private/relationsideinfo_si.h"
-#include "relationsideinfo.h"
 #include "component.h"
+#include "relationsideinfo.h"
 
 
 namespace DiagramModeller {
@@ -50,13 +50,6 @@ RelationSideInfo::~RelationSideInfo()
 }
 
 
-RelationSideInfo &RelationSideInfo::operator =(const RelationSideInfo &other)
-{
-    m = other.m;
-    return *this;
-}
-
-
 int RelationSideInfo::componentId() const { return m->componentId; }
 void RelationSideInfo::setComponentId(int value) { m->componentId = value; }
 
@@ -71,6 +64,13 @@ void RelationSideInfo::setName(QString value) { m->name = value; }
 
 VisibilityScope RelationSideInfo::visibility() const { return m->visibility; }
 void RelationSideInfo::setVisibility(VisibilityScope value) { m->visibility = value; }
+
+
+RelationSideInfo &RelationSideInfo::operator =(const RelationSideInfo &other)
+{
+    m = other.m;
+    return *this;
+}
 
 
 } // namespace DiagramModeller

@@ -7,6 +7,7 @@
 #include "Core/shareddefs.h"
 #include "dmglobal.h"
 
+
 namespace DiagramModeller {
 
 
@@ -18,8 +19,6 @@ public:
     RelationSideInfo(const RelationSideInfo &);
 
     ~RelationSideInfo();
-
-    RelationSideInfo &operator =(const RelationSideInfo &);
 
     int componentId() const;
     void setComponentId(int);
@@ -35,6 +34,8 @@ public:
 
     VisibilityScope visibility() const;
     void setVisibility(VisibilityScope);
+
+    RelationSideInfo &operator =(const RelationSideInfo &);
 
 private:
     QSharedDataPointer<RelationSideInfoSharedImplementation> m;
