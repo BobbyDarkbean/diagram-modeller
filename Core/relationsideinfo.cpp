@@ -8,14 +8,16 @@ namespace DiagramModeller {
 
 RelationSideInfoSharedImplementation::RelationSideInfoSharedImplementation()
     : QSharedData(),
-      componentId(INVALID_COMPONENT_ID)
+      componentId(INVALID_COMPONENT_ID),
+      category(RC_None)
 {
 }
 
 
 RelationSideInfoSharedImplementation::RelationSideInfoSharedImplementation(const RelationSideInfoSharedImplementation &other)
     : QSharedData(other),
-      componentId(other.componentId)
+      componentId(other.componentId),
+      category(other.category)
 {
 }
 
@@ -51,6 +53,9 @@ RelationSideInfo &RelationSideInfo::operator =(const RelationSideInfo &other)
 
 int RelationSideInfo::componentId() const { return m->componentId; }
 void RelationSideInfo::setComponentId(int value) { m->componentId = value; }
+
+RelationCategory RelationSideInfo::category() const { return m->category; }
+void RelationSideInfo::setCategory(RelationCategory value) { m->category = value; }
 
 
 } // namespace DiagramModeller

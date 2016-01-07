@@ -4,6 +4,8 @@
 
 #include <QSharedData>
 
+#include "dmglobal.h"
+
 
 namespace DiagramModeller {
 
@@ -17,6 +19,7 @@ public:
     ~RelationSideInfoSharedImplementation();
 
     int componentId;
+    RelationCategory category;
 
 private:
     RelationSideInfoSharedImplementation &operator =(const RelationSideInfoSharedImplementation &) Q_DECL_EQ_DELETE;

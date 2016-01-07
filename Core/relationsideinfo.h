@@ -4,7 +4,7 @@
 
 #include <QSharedDataPointer>
 #include "Core/shareddefs.h"
-
+#include "dmglobal.h"
 
 namespace DiagramModeller {
 
@@ -20,9 +20,11 @@ public:
 
     RelationSideInfo &operator =(const RelationSideInfo &);
 
-
     int componentId() const;
     void setComponentId(int);
+
+    RelationCategory category() const;
+    void setCategory(RelationCategory);
 
 private:
     QSharedDataPointer<RelationSideInfoSharedImplementation> m;
