@@ -3,6 +3,7 @@
 
 
 #include <QSharedDataPointer>
+#include <QString>
 #include "Core/shareddefs.h"
 #include "dmglobal.h"
 
@@ -25,6 +26,9 @@ public:
 
     RelationCategory category() const;
     void setCategory(RelationCategory);
+
+    QString multiplicity() const;
+    void setMultiplicity(QString);
 
 private:
     QSharedDataPointer<RelationSideInfoSharedImplementation> m;

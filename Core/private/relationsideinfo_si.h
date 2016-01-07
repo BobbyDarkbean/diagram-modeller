@@ -3,7 +3,7 @@
 
 
 #include <QSharedData>
-
+#include <QString>
 #include "dmglobal.h"
 
 
@@ -20,6 +20,7 @@ public:
 
     int componentId;
     RelationCategory category;
+    QString multiplicity;
 
 private:
     RelationSideInfoSharedImplementation &operator =(const RelationSideInfoSharedImplementation &) Q_DECL_EQ_DELETE;
