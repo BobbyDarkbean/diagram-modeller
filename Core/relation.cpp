@@ -9,13 +9,21 @@ const int INVALID_RELATION_ID = -1;
 
 
 RelationSharedImplementation::RelationSharedImplementation()
-    : QSharedData()
+    : QSharedData(),
+      id(INVALID_RELATION_ID),
+      name(),
+      properties(),
+      sides()
 {
 }
 
 
 RelationSharedImplementation::RelationSharedImplementation(const RelationSharedImplementation &other)
-    : QSharedData(other)
+    : QSharedData(other),
+      id(other.id),
+      name(other.name),
+      properties(other.properties),
+      sides(other.sides)
 {
 }
 
