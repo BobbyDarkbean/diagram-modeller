@@ -10,7 +10,8 @@ RelationSideInfoSharedImplementation::RelationSideInfoSharedImplementation()
     : QSharedData(),
       componentId(INVALID_COMPONENT_ID),
       category(RC_None),
-      multiplicity()
+      multiplicity(),
+      name()
 {
 }
 
@@ -19,7 +20,8 @@ RelationSideInfoSharedImplementation::RelationSideInfoSharedImplementation(const
     : QSharedData(other),
       componentId(other.componentId),
       category(other.category),
-      multiplicity(other.multiplicity)
+      multiplicity(other.multiplicity),
+      name(other.name)
 {
 }
 
@@ -61,6 +63,9 @@ void RelationSideInfo::setCategory(RelationCategory value) { m->category = value
 
 QString RelationSideInfo::multiplicity() const { return m->multiplicity; }
 void RelationSideInfo::setMultiplicity(QString value) { m->multiplicity = value; }
+
+QString RelationSideInfo::name() const { return m->name; }
+void RelationSideInfo::setName(QString value) { m->name = value; }
 
 
 } // namespace DiagramModeller

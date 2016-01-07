@@ -21,6 +21,7 @@ public:
     int componentId;
     RelationCategory category;
     QString multiplicity;
+    QString name;
 
 private:
     RelationSideInfoSharedImplementation &operator =(const RelationSideInfoSharedImplementation &) Q_DECL_EQ_DELETE;

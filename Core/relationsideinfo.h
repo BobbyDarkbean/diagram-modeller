@@ -30,6 +30,9 @@ public:
     QString multiplicity() const;
     void setMultiplicity(QString);
 
+    QString name() const;
+    void setName(QString);
+
 private:
     QSharedDataPointer<RelationSideInfoSharedImplementation> m;
 };
