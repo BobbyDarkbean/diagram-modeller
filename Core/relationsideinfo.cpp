@@ -1,18 +1,21 @@
 #include "private/relationsideinfo_si.h"
 #include "relationsideinfo.h"
+#include "component.h"
 
 
 namespace DiagramModeller {
 
 
 RelationSideInfoSharedImplementation::RelationSideInfoSharedImplementation()
-    : QSharedData()
+    : QSharedData(),
+      componentId(INVALID_COMPONENT_ID)
 {
 }
 
 
 RelationSideInfoSharedImplementation::RelationSideInfoSharedImplementation(const RelationSideInfoSharedImplementation &other)
-    : QSharedData(other)
+    : QSharedData(other),
+      componentId(other.componentId)
 {
 }
 
@@ -44,6 +47,10 @@ RelationSideInfo &RelationSideInfo::operator =(const RelationSideInfo &other)
     m = other.m;
     return *this;
 }
+
+
+int RelationSideInfo::componentId() const { return m->componentId; }
+void RelationSideInfo::setComponentId(int value) { m->componentId = value; }
 
 
 } // namespace DiagramModeller

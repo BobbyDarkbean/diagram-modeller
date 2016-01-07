@@ -16,6 +16,8 @@ public:
 
     ~RelationSideInfoSharedImplementation();
 
+    int componentId;
+
 private:
     RelationSideInfoSharedImplementation &operator =(const RelationSideInfoSharedImplementation &) Q_DECL_EQ_DELETE;
 };

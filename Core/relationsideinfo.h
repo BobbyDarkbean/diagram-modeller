@@ -20,6 +20,10 @@ public:
 
     RelationSideInfo &operator =(const RelationSideInfo &);
 
+
+    int componentId() const;
+    void setComponentId(int);
+
 private:
     QSharedDataPointer<RelationSideInfoSharedImplementation> m;
 };
