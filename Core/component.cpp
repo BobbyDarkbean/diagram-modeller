@@ -78,7 +78,7 @@ QString Component::docText() const { return m->docText; }
 void Component::setDocText(const QString & value) { m->docText = value; }
 
 
-bool Component::isValid() const { }
+bool Component::isValid() const { return m->id != INVALID_COMPONENT_ID; }
 
 QVariant Component::property(const QString &key) const { }
 bool Component::hasProperty(const QString &key) const { }

@@ -53,7 +53,7 @@ Relation::~Relation()
 int Relation::id() const { return m->id; }
 
 QString Relation::name() const { return m->name; }
-void Relation::setName(QString value) { m->name = value; }
+void Relation::setName(const QString &value) { m->name = value; }
 
 bool Relation::isValid() const { return m->id != INVALID_RELATION_ID; }
 

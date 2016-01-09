@@ -57,10 +57,10 @@ RelationCategory RelationSideInfo::category() const { return m->category; }
 void RelationSideInfo::setCategory(RelationCategory value) { m->category = value; }
 
 QString RelationSideInfo::multiplicity() const { return m->multiplicity; }
-void RelationSideInfo::setMultiplicity(QString value) { m->multiplicity = value; }
+void RelationSideInfo::setMultiplicity(const QString &value) { m->multiplicity = value; }
 
 QString RelationSideInfo::name() const { return m->name; }
-void RelationSideInfo::setName(QString value) { m->name = value; }
+void RelationSideInfo::setName(const QString &value) { m->name = value; }
 
 VisibilityScope RelationSideInfo::visibility() const { return m->visibility; }
 void RelationSideInfo::setVisibility(VisibilityScope value) { m->visibility = value; }

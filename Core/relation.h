@@ -28,7 +28,7 @@ public:
     int id() const;
 
     QString name() const;
-    void setName(QString);
+    void setName(const QString &);
 
     bool isValid() const;
 

@@ -27,10 +27,10 @@ public:
     void setCategory(RelationCategory);
 
     QString multiplicity() const;
-    void setMultiplicity(QString);
+    void setMultiplicity(const QString &);
 
     QString name() const;
-    void setName(QString);
+    void setName(const QString &);
 
     VisibilityScope visibility() const;
     void setVisibility(VisibilityScope);
