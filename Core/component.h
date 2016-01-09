@@ -30,6 +30,19 @@ public:
     bool clearProperty(const QString &key);
     void clearProperties();
 
+    int childrenCount() const;
+    int childAt(int i);
+    int childIndex(int id) const;
+    int hasChild(int id) const;
+    bool insertChild(int i, int id);
+    bool removeChild(int id);
+    bool removeChildAt(int i);
+    bool moveChild(int from, int to);
+    int relationsCount() const;
+    int hasRelation(int id) const;
+    bool appendRelaion(int id);
+    bool removeRelation(int id);
+
     Component &operator =(const Component &);
 
 private:
