@@ -6,6 +6,7 @@
 #include <QVariant>
 #include <QString>
 #include "Core/shareddefs.h"
+#include "dmglobal.h"
 
 
 namespace DiagramModeller {
@@ -22,6 +23,25 @@ public:
     Component(const Component &);
 
     ~Component();
+
+
+    ComponentCategory category() const;
+    void setCategory(ComponentCategory);
+
+    int id() const;
+
+    QString name() const;
+    void setName(const QString &);
+
+    VisibilityScope visibility() const;
+    void setVisibility(VisibilityScope);
+
+    int parentId() const;
+    void setParentId(int);
+
+    QString docText() const;
+    void setDocText(const QString &);
+
 
     bool isValid() const;
     QVariant property(const QString &key) const;

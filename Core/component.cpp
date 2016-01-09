@@ -60,6 +60,24 @@ Component::~Component()
 }
 
 
+ComponentCategory Component::category() const { return m->category; }
+void Component::setCategory(ComponentCategory value) { m->category = value; }
+
+int Component::id() const { return m->id; }
+
+QString Component::name() const { return m->name; }
+void Component::setName(const QString & value) { m->name = value; }
+
+VisibilityScope Component::visibility() const { return m->visibility; }
+void Component::setVisibility(VisibilityScope value) { m->visibility = value; }
+
+int Component::parentId() const { return m->parentId; }
+void Component::setParentId(int value) { m->parentId = value; }
+
+QString Component::docText() const { return m->docText; }
+void Component::setDocText(const QString & value) { m->docText = value; }
+
+
 bool Component::isValid() const { }
 
 QVariant Component::property(const QString &key) const { }
