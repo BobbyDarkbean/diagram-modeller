@@ -42,6 +42,14 @@ Component::~Component()
 }
 
 
+bool Component::isValid() const { }
+
+QVariant property(const QString &key) const { }
+bool hasProperty(const QString &key) const { }
+void setProperty(const QString &key, const QVariant &value) { }
+bool clearProperty(const QString &key) { }
+void clearProperties() { }
+
 Component &Component::operator =(const Component &other)
 {
     m = other.m;
