@@ -33,6 +33,8 @@ public:
     QVariant property(const QString &key) const;
     bool hasProperty(const QString &key) const;
     void setProperty(const QString &key, const QVariant &value);
+    bool clearProperty(const QString &key);
+    void clearProperties();
 
     Relation &operator =(const Relation &);
 

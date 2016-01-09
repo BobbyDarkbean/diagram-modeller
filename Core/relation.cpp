@@ -60,6 +60,8 @@ bool Relation::isValid() const { return m->id != INVALID_RELATION_ID; }
 QVariant Relation::property(const QString &key) const { return m->properties.value(key, QVariant()); }
 bool Relation::hasProperty(const QString &key) const { return m->properties.contains(key); }
 void Relation::setProperty(const QString &key, const QVariant &value) { m->properties.insert(key, value); }
+bool Relation::clearProperty(const QString &key) { return m->properties.remove(key) > 0; }
+void Relation::clearProperties() { m->properties.clear(); }
 
 
 Relation &Relation::operator =(const Relation &other)
