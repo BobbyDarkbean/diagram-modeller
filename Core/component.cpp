@@ -86,18 +86,18 @@ void Component::setProperty(const QString &key, const QVariant &value) { m->prop
 bool Component::clearProperty(const QString &key) { return m->properties.remove(key) > 0; }
 void Component::clearProperties() { m->properties.clear(); }
 
-int Component::childrenCount() const { }
-int Component::childAt(int i) { }
-int Component::childIndex(int id) const { }
-bool Component::hasChild(int id) const { }
-bool Component::insertChild(int i, int id) { }
-bool Component::removeChild(int id) { }
-bool Component::removeChildAt(int i) { }
-bool Component::moveChild(int from, int to) { }
-int Component::relationsCount() const { }
-bool Component::hasRelation(int id) const { }
-bool Component::appendRelaion(int id) { }
-bool Component::removeRelation(int id) { }
+int Component::childrenCount() const { return 0; }
+int Component::childAt(int i) { return -1; }
+int Component::childIndex(int id) const { return -1; }
+bool Component::hasChild(int id) const { return false; }
+bool Component::insertChild(int i, int id) { return false; }
+bool Component::removeChild(int id) { return false; }
+bool Component::removeChildAt(int i) { return false; }
+bool Component::moveChild(int from, int to) { return false; }
+int Component::relationsCount() const { return -1; }
+bool Component::hasRelation(int id) const { return false; }
+bool Component::appendRelaion(int id) { return false; }
+bool Component::removeRelation(int id) { return false; }
 
 
 Component &Component::operator =(const Component &other)
