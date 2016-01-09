@@ -80,11 +80,11 @@ void Component::setDocText(const QString & value) { m->docText = value; }
 
 bool Component::isValid() const { return m->id != INVALID_COMPONENT_ID; }
 
-QVariant Component::property(const QString &key) const { }
-bool Component::hasProperty(const QString &key) const { }
-void Component::setProperty(const QString &key, const QVariant &value) { }
-bool Component::clearProperty(const QString &key) { }
-void Component::clearProperties() { }
+QVariant Component::property(const QString &key) const { return m->properties.value(key, QVariant()); }
+bool Component::hasProperty(const QString &key) const { return m->properties.contains(key); }
+void Component::setProperty(const QString &key, const QVariant &value) { m->properties.insert(key, value); }
+bool Component::clearProperty(const QString &key) { return m->properties.remove(key) > 0; }
+void Component::clearProperties() { m->properties.clear(); }
 
 int Component::childrenCount() const { }
 int Component::childAt(int i) { }
