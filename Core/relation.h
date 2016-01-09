@@ -6,6 +6,8 @@
 #include <QString>
 #include <QVariant>
 #include "Core/shareddefs.h"
+#include "relationsideinfo.h"
+#include "dmglobal.h"
 
 
 namespace DiagramModeller {
@@ -35,6 +37,13 @@ public:
     void setProperty(const QString &key, const QVariant &value);
     bool clearProperty(const QString &key);
     void clearProperties();
+
+    RelationSideInfo sideInfo(RelationSide side) const;
+    void setRelationSideComponent(RelationSide side, int componentId);
+    void setRelationSideCategory(RelationSide side, RelationCategory cat);
+    void setRelationSideMultiplicity(RelationSide side, const QString &multiplicity);
+    void setRelationSideName(RelationSide side, const QString &name);
+    void setRelationSideVisibility(RelationSide side, VisibilityScope visibility);
 
     Relation &operator =(const Relation &);
 

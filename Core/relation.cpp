@@ -63,6 +63,23 @@ void Relation::setProperty(const QString &key, const QVariant &value) { m->prope
 bool Relation::clearProperty(const QString &key) { return m->properties.remove(key) > 0; }
 void Relation::clearProperties() { m->properties.clear(); }
 
+RelationSideInfo Relation::sideInfo(RelationSide side) const { return m->sides.value(side, RelationSideInfo()); }
+
+void Relation::setRelationSideComponent(RelationSide side, int componentId)
+{ m->sides[side].setComponentId(componentId); }
+
+void Relation::setRelationSideCategory(RelationSide side, RelationCategory cat)
+{  m->sides[side].setCategory(cat); }
+
+void Relation::setRelationSideMultiplicity(RelationSide side, const QString &multiplicity)
+{ m->sides[side].setMultiplicity(multiplicity); }
+
+void Relation::setRelationSideName(RelationSide side, const QString &name)
+{ m->sides[side].setName(name); }
+
+void Relation::setRelationSideVisibility(RelationSide side, VisibilityScope visibility)
+{ m->sides[side].setVisibility(visibility); }
+
 
 Relation &Relation::operator =(const Relation &other)
 {
