@@ -9,13 +9,31 @@ const int INVALID_COMPONENT_ID = -1;
 
 
 ComponentSharedImplementation::ComponentSharedImplementation()
-    : QSharedData()
+    : QSharedData(),
+      category(CC_DiagramRoot),
+      id(INVALID_COMPONENT_ID),
+      name(),
+      visibility(VS_Public),
+      parentId(INVALID_COMPONENT_ID),
+      docText(),
+      properties(),
+      children(),
+      relations()
 {
 }
 
 
 ComponentSharedImplementation::ComponentSharedImplementation(const ComponentSharedImplementation &other)
-    : QSharedData(other)
+    : QSharedData(other),
+      category(other.category),
+      id(other.id),
+      name(other.name),
+      visibility(other.visibility),
+      parentId(other.parentId),
+      docText(other.docText),
+      properties(other.properties),
+      children(other.children),
+      relations(other.relations)
 {
 }
 
@@ -53,13 +71,13 @@ void Component::clearProperties() { }
 int Component::childrenCount() const { }
 int Component::childAt(int i) { }
 int Component::childIndex(int id) const { }
-int Component::hasChild(int id) const { }
+bool Component::hasChild(int id) const { }
 bool Component::insertChild(int i, int id) { }
 bool Component::removeChild(int id) { }
 bool Component::removeChildAt(int i) { }
 bool Component::moveChild(int from, int to) { }
 int Component::relationsCount() const { }
-int Component::hasRelation(int id) const { }
+bool Component::hasRelation(int id) const { }
 bool Component::appendRelaion(int id) { }
 bool Component::removeRelation(int id) { }
 
