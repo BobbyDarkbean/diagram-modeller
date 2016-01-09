@@ -57,6 +57,10 @@ void Relation::setName(QString value) { m->name = value; }
 
 bool Relation::isValid() const { return m->id != INVALID_RELATION_ID; }
 
+QVariant Relation::property(const QString &key) const { return m->properties.value(key, QVariant()); }
+bool Relation::hasProperty(const QString &key) const { return m->properties.contains(key); }
+void Relation::setProperty(const QString &key, const QVariant &value) { m->properties.insert(key, value); }
+
 
 Relation &Relation::operator =(const Relation &other)
 {

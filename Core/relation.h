@@ -4,6 +4,7 @@
 
 #include <QSharedDataPointer>
 #include <QString>
+#include <QVariant>
 #include "Core/shareddefs.h"
 
 
@@ -28,6 +29,10 @@ public:
     void setName(QString);
 
     bool isValid() const;
+
+    QVariant property(const QString &key) const;
+    bool hasProperty(const QString &key) const;
+    void setProperty(const QString &key, const QVariant &value);
 
     Relation &operator =(const Relation &);
 
