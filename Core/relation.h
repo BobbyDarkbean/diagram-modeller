@@ -22,10 +22,10 @@ public:
 
     ~Relation();
 
+    int id() const;
+
     QString name() const;
     void setName(QString);
-
-    int id() const;
 
     Relation &operator =(const Relation &);
 
