@@ -27,6 +27,8 @@ public:
     QString name() const;
     void setName(QString);
 
+    bool isValid() const;
+
     Relation &operator =(const Relation &);
 
 private:
