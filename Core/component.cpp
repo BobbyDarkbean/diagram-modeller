@@ -100,7 +100,7 @@ bool Component::insertChild(int i, int id)
     return true;
 }
 
-bool Component::removeChild(int id) { return m->children.removeAll(id); }
+bool Component::removeChild(int id) { return m->children.removeAll(id) > 0; }
 
 bool Component::removeChildAt(int i)
 {
@@ -112,9 +112,9 @@ bool Component::removeChildAt(int i)
 
 bool Component::moveChild(int from, int to)
 {
-    if ((!((0 <= from) && (from < m->children.size())))
-       || (!((0 <= to) && (to < m->children.size()))))
-    return false;
+    if (!((0 <= from) && (from < m->children.size()))
+       || !((0 <= to) && (to < m->children.size())))
+        return false;
 
     m->children.move(from, to);
     return true;
