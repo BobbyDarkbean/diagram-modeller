@@ -87,10 +87,10 @@ void Component::setProperty(const QString &key, const QVariant &value) { m->prop
 bool Component::clearProperty(const QString &key) { return m->properties.remove(key) > 0; }
 void Component::clearProperties() { m->properties.clear(); }
 
-int Component::childrenCount() const { return 0; }
-int Component::childAt(int i) { return -1; }
-int Component::childIndex(int id) const { return -1; }
-bool Component::hasChild(int id) const { return false; }
+int Component::childrenCount() const { return m->children.size(); }
+int Component::childAt(int i) { return m->children.value(i, INVALID_COMPONENT_ID); }
+int Component::childIndex(int id) const { return m->children.indexOf(id); }
+bool Component::hasChild(int id) const { return m->children.contains(id); }
 bool Component::insertChild(int i, int id) { return false; }
 bool Component::removeChild(int id) { return false; }
 bool Component::removeChildAt(int i) { return false; }

@@ -19,7 +19,7 @@ class ComponentSharedImplementation;
 class DM_CORE_SHARED Component
 {
 public:
-    explicit Component(int id);
+    explicit Component(int id = INVALID_COMPONENT_ID);
     Component(const Component &);
 
     ~Component();
