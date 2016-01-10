@@ -43,9 +43,10 @@ ComponentSharedImplementation::~ComponentSharedImplementation()
 }
 
 
-Component::Component()
+Component::Component(int id)
     : m(new ComponentSharedImplementation)
 {
+    m->id = id;
 }
 
 
