@@ -91,14 +91,47 @@ int Component::childrenCount() const { return m->children.size(); }
 int Component::childAt(int i) { return m->children.value(i, INVALID_COMPONENT_ID); }
 int Component::childIndex(int id) const { return m->children.indexOf(id); }
 bool Component::hasChild(int id) const { return m->children.contains(id); }
-bool Component::insertChild(int i, int id) { return false; }
-bool Component::removeChild(int id) { return false; }
-bool Component::removeChildAt(int i) { return false; }
-bool Component::moveChild(int from, int to) { return false; }
-int Component::relationsCount() const { return -1; }
-bool Component::hasRelation(int id) const { return false; }
-bool Component::appendRelaion(int id) { return false; }
-bool Component::removeRelation(int id) { return false; }
+
+bool Component::insertChild(int i, int id)
+{
+    if (!((0 <= i) && (i <= m->children.size())))
+        return false;
+    m->children.insert(i, id);
+    return true;
+}
+
+bool Component::removeChild(int id) { return m->children.removeAll(id); }
+
+bool Component::removeChildAt(int i)
+{
+    if (!((0 <= i) && (i < m->children.size())))
+        return false;
+    m->children.removeAt(i);
+    return true;
+}
+
+bool Component::moveChild(int from, int to)
+{
+    if ((!((0 <= from) && (from < m->children.size())))
+       || (!((0 <= to) && (to < m->children.size()))))
+    return false;
+
+    m->children.move(from, to);
+    return true;
+}
+
+int Component::relationsCount() const { return m->relations.size(); }
+bool Component::hasRelation(int id) const { return m->relations.contains(id); }
+
+bool Component::appendRelaion(int id)
+{
+    if (m->relations.contains(id))
+        return false;
+    m->relations.insert(id);
+    return true;
+}
+
+bool Component::removeRelation(int id) { return m->relations.remove(id); }
 
 
 Component &Component::operator =(const Component &other)
