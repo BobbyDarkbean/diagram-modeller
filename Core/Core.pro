@@ -9,17 +9,11 @@ TARGET = DmCore
 
 HEADERS += \
     private/component_si.h \
-    private/relation_si.h \
     component.h \
     dmglobal.h \
-    relation.h \
-    relationsideinfo.h \
-    shareddefs.h \
-    private/relationsideinfo_si.h
+    shareddefs.h
 
 SOURCES += \
-    component.cpp \
-    relation.cpp \
-    relationsideinfo.cpp
+    component.cpp
 
 DEFINES += DM_CORE_LIB
