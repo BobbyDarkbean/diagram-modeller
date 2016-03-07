@@ -77,6 +77,13 @@ void Component::clearProperties()
 { m->properties.clear(); }
 
 
+QVariant &Component::operator [](const QString &key)
+{ return m->properties[key]; }
+
+QVariant Component::operator [](const QString &key) const
+{ return property(key); }
+
+
 Component &Component::operator =(const Component &other)
 {
     m = other.m;

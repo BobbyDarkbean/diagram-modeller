@@ -38,6 +38,9 @@ public:
     bool clearProperty(const QString &key);
     void clearProperties();
 
+    QVariant &operator [](const QString &key);
+    QVariant operator [](const QString &key) const;
+
     Component &operator =(const Component &);
 
 private:
