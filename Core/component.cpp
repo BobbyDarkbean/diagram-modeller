@@ -49,12 +49,17 @@ Component::~Component()
 }
 
 
-ComponentCategory Component::category() const { return m->category; }
-void Component::setCategory(ComponentCategory value) { m->category = value; }
+ComponentCategory Component::category() const
+{ return m->category; }
 
-int Component::id() const { return m->id; }
+void Component::setCategory(ComponentCategory value)
+{ m->category = value; }
 
-bool Component::isValid() const { return m->id != INVALID_COMPONENT_ID; }
+int Component::id() const
+{ return m->id; }
+
+bool Component::isValid() const
+{ return m->id != INVALID_COMPONENT_ID; }
 
 QVariant Component::property(const QString &key) const
 { return m->properties.value(key, QVariant()); }
