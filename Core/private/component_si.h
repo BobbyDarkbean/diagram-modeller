@@ -3,7 +3,6 @@
 
 
 #include <QSharedData>
-#include <QMap>
 #include <QVariant>
 #include "dmglobal.h"
 

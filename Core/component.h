@@ -7,7 +7,6 @@
 #include "dmglobal.h"
 
 
-class QString;
 class QVariant;
 
 
