@@ -56,11 +56,20 @@ int Component::id() const { return m->id; }
 
 bool Component::isValid() const { return m->id != INVALID_COMPONENT_ID; }
 
-QVariant Component::property(const QString &key) const { return m->properties.value(key, QVariant()); }
-bool Component::hasProperty(const QString &key) const { return m->properties.contains(key); }
-void Component::setProperty(const QString &key, const QVariant &value) { m->properties.insert(key, value); }
-bool Component::clearProperty(const QString &key) { return m->properties.remove(key) > 0; }
-void Component::clearProperties() { m->properties.clear(); }
+QVariant Component::property(const QString &key) const
+{ return m->properties.value(key, QVariant()); }
+
+bool Component::hasProperty(const QString &key) const
+{ return m->properties.contains(key); }
+
+void Component::setProperty(const QString &key, const QVariant &value)
+{ m->properties.insert(key, value); }
+
+bool Component::clearProperty(const QString &key)
+{ return m->properties.remove(key) > 0; }
+
+void Component::clearProperties()
+{ m->properties.clear(); }
 
 
 Component &Component::operator =(const Component &other)
