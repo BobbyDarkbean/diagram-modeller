@@ -7,6 +7,7 @@ namespace DiagramModeller {
 
 enum ComponentCategory
 {
+    CC_None,
     CC_DiagramRoot,
     CC_Class,
     CC_Interface,
@@ -15,8 +16,14 @@ enum ComponentCategory
     CC_Attribute,
     CC_Operation,
     CC_Parameter,
-    CC_Return
+    CC_Return,
+    CC_Signal,
+    CC_Generalization,
+    CC_Realization,
+    CC_Association,
+    CC_Dependency
 };
+
 
 enum VisibilityScope
 {
@@ -24,24 +31,6 @@ enum VisibilityScope
     VS_Protected,
     VS_Private,
     VS_Package
-};
-
-enum RelationCategory
-{
-    RC_None,
-    RC_Generalization,
-    RC_Realization,
-    RC_Composition,
-    RC_Aggregation,
-    RC_Association,
-    RC_DirectedAssociation,
-    RC_Dependency
-};
-
-enum RelationSide
-{
-    RS_1,
-    RS_2
 };
 
 
