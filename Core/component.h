@@ -3,10 +3,12 @@
 
 
 #include <QSharedDataPointer>
-#include <QVariant>
-#include <QString>
 #include "Core/shareddefs.h"
 #include "dmglobal.h"
+
+
+class QString;
+class QVariant;
 
 
 namespace DiagramModeller {
@@ -24,24 +26,10 @@ public:
 
     ~Component();
 
-
     ComponentCategory category() const;
     void setCategory(ComponentCategory);
 
     int id() const;
-
-    QString name() const;
-    void setName(const QString &);
-
-    VisibilityScope visibility() const;
-    void setVisibility(VisibilityScope);
-
-    int parentId() const;
-    void setParentId(int);
-
-    QString docText() const;
-    void setDocText(const QString &);
-
 
     bool isValid() const;
     QVariant property(const QString &key) const;
@@ -49,19 +37,6 @@ public:
     void setProperty(const QString &key, const QVariant &value);
     bool clearProperty(const QString &key);
     void clearProperties();
-
-    int childrenCount() const;
-    int childAt(int i);
-    int childIndex(int id) const;
-    bool hasChild(int id) const;
-    bool insertChild(int i, int id);
-    bool removeChild(int id);
-    bool removeChildAt(int i);
-    bool moveChild(int from, int to);
-    int relationsCount() const;
-    bool hasRelation(int id) const;
-    bool appendRelaion(int id);
-    bool removeRelation(int id);
 
     Component &operator =(const Component &);
 

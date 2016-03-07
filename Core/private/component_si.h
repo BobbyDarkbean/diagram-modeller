@@ -4,8 +4,6 @@
 
 #include <QSharedData>
 #include <QMap>
-#include <QList>
-#include <QSet>
 #include <QVariant>
 #include "dmglobal.h"
 
@@ -23,13 +21,7 @@ public:
 
     ComponentCategory category;
     int id;
-    QString name;
-    VisibilityScope visibility;
-    int parentId;
-    QString docText;
     QMap<QString, QVariant> properties;
-    QList<int> children;
-    QSet<int> relations;
 
 private:
     ComponentSharedImplementation &operator =(const ComponentSharedImplementation &) Q_DECL_EQ_DELETE;
