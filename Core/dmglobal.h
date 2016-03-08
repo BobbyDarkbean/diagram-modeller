@@ -34,6 +34,15 @@ enum VisibilityScope
 };
 
 
+enum MultiplicityRange
+{
+    MR_ZeroOrOne,
+    MR_One,
+    MR_ZeroOrMore,
+    MR_OneOrMore
+};
+
+
 } // namespace DiagramModeller
 
 
