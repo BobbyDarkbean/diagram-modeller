@@ -43,6 +43,22 @@ enum MultiplicityRange
 };
 
 
+enum PropertyType
+{
+    PT_Unknown,
+    PT_String,
+    PT_Integer,
+    PT_Real,
+    PT_Boolean,
+    PT_Visibility,
+    PT_Multiplicity,
+    PT_Color,
+    PT_Rectangle,
+    PT_Path,
+    PT_List
+};
+
+
 } // namespace DiagramModeller
 
 
