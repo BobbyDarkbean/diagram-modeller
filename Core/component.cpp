@@ -10,7 +10,7 @@ const int INVALID_COMPONENT_ID = -1;
 
 ComponentSharedImplementation::ComponentSharedImplementation()
     : QSharedData(),
-      category(CC_DiagramRoot),
+      category(CC_None),
       id(INVALID_COMPONENT_ID),
       properties()
 {
@@ -59,7 +59,7 @@ int Component::id() const
 { return m->id; }
 
 bool Component::isValid() const
-{ return m->id != INVALID_COMPONENT_ID; }
+{ return !(id() == INVALID_COMPONENT_ID || category() == CC_None); }
 
 QVariant Component::property(const QString &key) const
 { return m->properties.value(key, QVariant()); }
